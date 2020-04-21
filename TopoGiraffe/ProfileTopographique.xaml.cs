@@ -27,7 +27,7 @@ namespace TopoGiraffe
             int compteur;
             //Echelle scale = new Echelle(130, 1000);
             MyValues = new ChartValues<ObservablePoint>();
-           
+
 
 
             foreach (IntersectionDetail IntersectionPoint in IntersectionPoints)
@@ -44,7 +44,7 @@ namespace TopoGiraffe
                     Values = MyValues,//les valeurs
                  //   PointGeometrySize = 4,
                     AreaLimit = 0,
-                    LineSmoothness = 0.2,
+                    LineSmoothness = 0.4,
                     //DataLabels = true,
                 }
             };
