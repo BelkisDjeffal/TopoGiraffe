@@ -1358,9 +1358,8 @@ namespace TopoGiraffe
                     // StyleCmbToRealStyle(courbeActuelle,Convert.ToInt32(Window1.Type.SelectedIndex));
                     newPolyline = new Polyline();
 
-                    //colorComboBox.SelectedIndex = window1.colorComboBox.SelectedIndex;
-                    //newPolyline.Stroke = (SolidColorBrush)new BrushConverter().ConvertFromString((colorComboBox.SelectedItem as RectangleName).Name);
-                    newPolyline.Stroke = System.Windows.Media.Brushes.Black;
+                    newPolyline.Stroke = new SolidColorBrush(AltitudeToColor(Convert.ToInt32(AltitudeBox.Text)));
+                    // à revoir 
                     newPolyline.StrokeThickness = 2;
                     newPolyline.FillRule = FillRule.EvenOdd;
 

@@ -42,15 +42,15 @@
 
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="75"/>
+            <RowDefinition Height="43"/>
+            <RowDefinition Height="52"/>
             <RowDefinition />
             <RowDefinition Height="20" />
 
         </Grid.RowDefinitions>
 
         <DockPanel Grid.Row="0">
-            <Menu DockPanel.Dock="Top">
+            <Menu DockPanel.Dock="Top" Height="36">
                 <MenuItem Header="_Fichier">
                     <MenuItem Header="_Nouveau" Click="import_Click"/>
                     <MenuItem Header="_Ouvrir" />
@@ -73,22 +73,26 @@
 
 
 
-        <Grid Grid.Row="1"  Background="#FF023788" Opacity=".84" >
+        <Grid  Background="#FF023788" Opacity=".84" Margin="0,38,0,0" Grid.RowSpan="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="51*"/>
+                <RowDefinition Height="11*"/>
+            </Grid.RowDefinitions>
 
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" >
-                <Button  x:Name="btn11" Width="90" Height="84" Background="#0000" BorderBrush="Transparent"
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.RowSpan="2" >
+                <Button  x:Name="btn11" Width="90" Height="68" Background="#0000" BorderBrush="Transparent"
         BorderThickness="0"  Margin="40,0,0,0" >
                     <Image Source="/assets/img/draw.png" Width="30" Height="30" />
                 </Button>
-                <Button  x:Name="btn12" Width="90" Height="84"  Background="{x:Null}"  BorderBrush="Transparent"
+                <Button  x:Name="btn12" Width="90" Height="65"  Background="{x:Null}"  BorderBrush="Transparent"
         BorderThickness="0"  Margin="40,0,0,0" >
                     <Image Source="/assets/img/tour.png" Width="30" Height="30"/>
                 </Button>
-                <Button  x:Name="btn13" Width="90" Height="84"  Background="{x:Null}"  BorderBrush="Transparent"
+                <Button  x:Name="btn13" Width="90" Height="58"  Background="{x:Null}"  BorderBrush="Transparent"
         BorderThickness="0"  Margin="40,0,0,0" Click="btn13_Click" >
                     <Image Source="/assets/img/report.png" Width="30" Height="30"/>
                 </Button>
-                <Button  x:Name="btn14" Width="90" Height="84"  Background="{x:Null}"  BorderBrush="Transparent"
+                <Button  x:Name="btn14" Width="90" Height="65"  Background="{x:Null}"  BorderBrush="Transparent"
         BorderThickness="0"  Margin="40,0,0,0" Foreground="#FFA37A7A" >
                     <Image Source="/assets/img/gear.png" Width="30" Height="30"/>
                 </Button>
@@ -159,9 +163,9 @@
                             <StackPanel  VerticalAlignment="Top" Height="410" Margin="0,-20,0,0" Grid.Row="1" Grid.RowSpan="3" >
 
 
-                                <TextBlock Text="Type de courbe" Margin="33,-1,32.8,4"></TextBlock>
+                                <TextBlock Text="Type de courbe" Margin="33,15,32.8,4"></TextBlock>
 
-                                <ComboBox x:Name="styleCourbeCmb" Text="Choisissez une couleur" Margin="33,7,32.8,35" Height="26" SelectionChanged="styleCourbeCmb_SelectionChanged" >
+                                <ComboBox x:Name="styleCourbeCmb" Text="Choisissez une couleur" Margin="33,5,32.8,35" Height="26" SelectionChanged="styleCourbeCmb_SelectionChanged" >
                                     <ComboBoxItem >Courbe simple</ComboBoxItem>
                                     <ComboBoxItem >Courbe intermediare</ComboBoxItem>
                                     <ComboBoxItem >Courbe Maitresse</ComboBoxItem>
@@ -198,7 +202,34 @@
 
                         </Grid>
                     </TabItem>
-                    <TabItem Header="Plan" Background="#C5C5C5" />
+                    <TabItem Header="Plan" Background="#C5C5C5" >
+                        <StackPanel   HorizontalAlignment="Center" Margin="0,30,0,0" Width="264" >
+                            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="7,7">
+                                <Label Content="EQUIDISTANCE : " VerticalContentAlignment="Center" FontWeight="Bold" FontSize="10"  Foreground="#515251" Height="45" Width="100"   HorizontalContentAlignment="Center" />
+                                <TextBox x:Name="EquidistanceTextBox"  Background="#E6E6E6" FontWeight="Bold" FontSize="17"  Foreground="#515251" Height="45" Width="150"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  />
+
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="7,7">
+                                <Label Content="MAX : " VerticalContentAlignment="Center" FontWeight="Bold" FontSize="10"  Foreground="#515251" Height="45" Width="100"   HorizontalContentAlignment="Center" />
+                                <TextBox x:Name="MaxTextBox" Background="#E6E6E6" FontWeight="Bold" FontSize="17"  Foreground="#515251" Height="45" Width="150" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Right"  />
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="7,7">
+                                <Label Content="MIN : " VerticalContentAlignment="Center" FontWeight="Bold" FontSize="10"  Foreground="#515251" Height="45" Width="100"   HorizontalContentAlignment="Center" />
+                                <TextBox x:Name="MinTextBox" Background="#E6E6E6" FontWeight="Bold" FontSize="17"  Foreground="#515251" Height="45" Width="150" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Right" />
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="7,7">
+                                <Label Content="ECHELLE : " VerticalContentAlignment="Center" FontWeight="Bold" FontSize="10"  Foreground="#515251" Height="45" Width="100"   HorizontalContentAlignment="Center" />
+                                <TextBox x:Name="EchelleTextBoxOnCanvas" Background="#E6E6E6" FontWeight="Bold" FontSize="17"  Foreground="#515251" Height="28" Width="150" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+                            </StackPanel>
+                            <Label Content="* Donner la valeur de l'echelle en pixels sur le plan" FontSize="7" Width="171"  HorizontalAlignment="Right"/>
+                            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="7,7">
+                                <TextBox x:Name="EchelleTextBoxOnField" Background="#E6E6E6" FontWeight="Bold" FontSize="17"  Foreground="#515251" Height="28" Width="150" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+                            </StackPanel>
+                            <Label Content="* Donner la valeur de l'echelle en (m)" FontSize="7" Width="157" HorizontalAlignment="Right" />
+                        </StackPanel>
+
+
+                    </TabItem>
 
                 </TabControl>
 
