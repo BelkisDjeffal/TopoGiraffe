@@ -55,16 +55,7 @@
             </Button>
         </Grid>
         
-            <DockPanel Grid.Row="0">
-                <Menu DockPanel.Dock="Top">
-                    <MenuItem Header="_Fichier">
-                        <MenuItem Header="_Nouveau" Click="import_Click"/>
-                        <MenuItem Header="_Ouvrir" />
-                        <MenuItem Header="_Sauvegarder" />
-                        <Separator />
-                        <MenuItem Header="_Exit" Click="MenuItem_Click" />
-                    </MenuItem>
-                </Menu>
+            <!--
         <DockPanel Grid.Row="0">
             <Menu DockPanel.Dock="Top" Height="36">
                 <MenuItem Header="_Fichier">
@@ -84,7 +75,8 @@
 
             </Menu>
             <TextBox AcceptsReturn="True" />
-            </DockPanel>
+        </DockPanel>
+        -->
         
 
 
@@ -317,9 +309,9 @@
                         BorderThickness="0" Margin="0,0,0,20" >
                         <Image Source="/assets/img/zoom-in.png" Height="25" Width="25"  />
                     </Button>
-                    <Button  x:Name="scaleButton" Width="83" Height="50"  Background="{x:Null}" BorderBrush="#FFF41111"
+                    <Button  x:Name="scaleButton" Width="83" Height="59"  Background="{x:Null}" BorderBrush="#FFF41111"
                         BorderThickness="0" Click="scaleButton_Click" >
-
+                        <Image Source="/assets/img/scale.png" Height="25" Width="25"  />
                     </Button>
                     <Button Content="Import" Width="50" FontSize="6" Foreground="Black" BorderBrush="#000" Background="#FF3173BA" Click="Button_Click" />
                     <CheckBox Content="Activer Dessin" x:Name="activerDessinCheckBox" Checked="activerDessinCheckBox_Checked" />
