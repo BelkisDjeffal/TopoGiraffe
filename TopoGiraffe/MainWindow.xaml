@@ -48,6 +48,15 @@
 
         </Grid.RowDefinitions>
 
+
+            <!--<Grid>
+                <Frame x:Name="_mainFrame"/>
+                <Button x:Name="fichier" VerticalAlignment="Center" Content="Ficher" BorderBrush="Transparent" BorderThickness="0" Width="80" HorizontalAlignment="Left" Click="ShowSauvgardeWindow_Click" >
+                    
+                </Button>
+            </Grid>-->
+            
+
         <Grid>
             <Frame x:Name="_mainFrame"/>
             <Button x:Name="fichier" VerticalAlignment="Center" Content="Ficher" BorderBrush="Transparent" BorderThickness="0" Width="80" HorizontalAlignment="Left" Click="ShowSauvgardeWindow_Click" >
@@ -97,14 +106,14 @@
         BorderThickness="0"  Margin="40,0,0,0" >
                     <Image Source="/assets/img/tour.png" Width="30" Height="30"/>
                 </Button>
-                <Button  x:Name="btn13" Width="90" Height="58"  Background="{x:Null}"  BorderBrush="Transparent"
+                <Button  x:Name="btn13" Width="90" Height="84"  Background="{x:Null}"  BorderBrush="Transparent"
         BorderThickness="0"  Margin="40,0,0,0" Click="btn13_Click" >
                     <Image Source="/assets/img/report.png" Width="30" Height="30"/>
                 </Button>
-                <Button  x:Name="btn14" Width="90" Height="65"  Background="{x:Null}"  BorderBrush="Transparent"
-        BorderThickness="0"  Margin="40,0,0,0" Foreground="#FFA37A7A" >
+                <Button  x:Name="btn14" Width="90" Height="84"  Background="{x:Null}"  BorderBrush="Transparent"
+        BorderThickness="0"  Margin="40,0,0,0" Foreground="#FFA37A7A"  >
                     <Image Source="/assets/img/gear.png" Width="30" Height="30"/>
-                </Button>
+                </Button> 
             </StackPanel>
         </Grid>
         <Grid  Grid.Row="2">
@@ -125,9 +134,14 @@
                     </TransformGroup>
                 </utils:ZoomBorder.RenderTransform>
                 <Grid>
-                    <Image Margin="12,12,10,9.8" Name="imgPhoto" Grid.Column="1"  />
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="567*"/>
+                        <ColumnDefinition Width="51*"/>
+                        <ColumnDefinition Width="427*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Margin="12,12,10,10" Name="imgPhoto" Grid.ColumnSpan="3"  />
 
-                    <Canvas x:Name="mainCanvas" MouseEnter="mainCanvas_MouseEnter" MouseMove="mainCanvas_MouseMove" MouseLeftButtonDown="mainCanvas_MouseLeftButtonDown" MouseRightButtonDown="mainCanvas_MouseRightButtonDown" Margin="-4,-1,4,-21" RenderTransformOrigin="0.498,0.517" >
+                    <Canvas x:Name="mainCanvas" MouseEnter="mainCanvas_MouseEnter" MouseMove="mainCanvas_MouseMove" MouseLeftButtonDown="mainCanvas_MouseLeftButtonDown" MouseRightButtonDown="mainCanvas_MouseRightButtonDown" Margin="-4,-1,4,-21" RenderTransformOrigin="0.498,0.517" Grid.ColumnSpan="3" >
                         <Canvas.Background>
                             <SolidColorBrush Color="#FFFFF3F0" Opacity=".1"  />
                         </Canvas.Background>
@@ -159,7 +173,11 @@
                             <TranslateTransform X="-0.597"/>
                         </TransformGroup>
                     </TabControl.RenderTransform>
+
+                   
+
                     <TabItem Header="Courbe" RenderTransformOrigin="0.505,0.548" Margin="-2,-2,-83,0">
+
                         <Grid Height="550">
                             <Grid.RowDefinitions>
                                 <RowDefinition  Height="0*" />
@@ -436,5 +454,6 @@
         </StatusBar>
 
     </Grid>
+
 
 </Window>
