@@ -54,8 +54,8 @@
 
             </Button>
         </Grid>
-        
-            <!--
+
+        <!--
         <DockPanel Grid.Row="0">
             <Menu DockPanel.Dock="Top" Height="36">
                 <MenuItem Header="_Fichier">
@@ -77,7 +77,7 @@
             <TextBox AcceptsReturn="True" />
         </DockPanel>
         -->
-        
+
 
 
 
@@ -212,7 +212,7 @@
                         </Grid>
                     </TabItem>
                     <TabItem Header="Plan" Background="#C5C5C5" Margin="72,-2,-165,0" >
-                 
+
                         <StackPanel   HorizontalAlignment="Center" Margin="0,30,0,0" Width="264" >
                             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="7,7">
                                 <Label Content="EQUIDISTANCE : " VerticalContentAlignment="Center" FontWeight="Bold" FontSize="10"  Foreground="#515251" Height="45" Width="100"   HorizontalContentAlignment="Center" />
@@ -280,47 +280,139 @@
                 </Grid>
 
             </Grid>
-            <Grid Grid.Column="0" Background="#EEEEEE" Margin="0,0,25,0" >
-                <StackPanel VerticalAlignment="Top"  Margin="0,58,-1,0" >
+            <Grid Grid.Column="0" Background="#EEEEEE" Margin="0,0,58,0" >
+                <StackPanel VerticalAlignment="Top"  Margin="10,10,0,0"  Width="30
+                            " HorizontalAlignment="Left">
 
-                    <Button  Name="nav" Width="68" Height="51"  Background="{x:Null}" BorderBrush="Transparent"
-                        BorderThickness="0" Margin="0,0,0,20" Click="nav_Click" >
-                        <Image Source="/assets/img/navigation.png" Height="30" Width="30"  ></Image>
-                    </Button>
-
-                    <Button x:Name="dessinerButton" Width="90" Height="60"   BorderBrush="Transparent"
-                           BorderThickness="0" Click="dessinerButton_Click"  >
-                        <Image Source="/assets/img/ink.png" Height="30" Width="30"  />
-                    </Button>
-                    <Button x:Name="add_line" Width="90" Height="62"   BorderBrush="Transparent"
-                          BorderThickness="0" HorizontalAlignment="Center"  Margin="0,0,0,0"  IsDefault="True" Click="add_line_Click">
-                        <Image Source="/assets/img/line.png" Height="40" Width="50"  />
-                    </Button>
-
-
-                    <Button x:Name="deleteAllButton" Width="90" Height="60"   BorderBrush="Transparent"
-                         BorderThickness="0" Click="deleteAllButton_Click" >
-                        <Image Source="/assets/img/deleteAll.png" Height="36" Width="36"  />
-                    </Button>
-                    <Button x:Name="deletePreviousButton" Width="90" Height="63"   BorderBrush="Transparent"
-                                BorderThickness="0" Click="deletePreviousButton_Click"   >
-                        <Image Source="/assets/img/deletePrevious.png" Height="27" Width="34"  />
-                    </Button>
-                    <Button  x:Name="btn1" Width="60" Height="60"  Background="{x:Null}" BorderBrush="Transparent"
-                        BorderThickness="0" Margin="0,0,0,20" >
-                        <Image Source="/assets/img/zoom-in.png" Height="25" Width="25"  />
-                    </Button>
-                    <Button  x:Name="scaleButton" Width="83" Height="59"  Background="{x:Null}" BorderBrush="#FFF41111"
-                        BorderThickness="0" Click="scaleButton_Click" >
-                        <Image Source="/assets/img/scale.png" Height="25" Width="25"  />
-                    </Button>
-                    <Button Content="Import" Width="79" FontSize="18" Foreground="Black" BorderBrush="#000" Background="#FF558CC8" Click="Button_Click" Height="33" Cursor="Hand" />
-                    <CheckBox Content="Activer Dessin" x:Name="activerDessinCheckBox" Checked="activerDessinCheckBox_Checked" />
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Margin" Value="0,10,0,0"/>
+                        </Style>
+                    </StackPanel.Resources>
 
 
 
+
+
+
+                    <Button  Name="nav"  Click="nav_Click" Width="25" Height="25">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                    <Image Source="/assets/img/navigation.png" 
+                               Width="20" 
+                               Height="20"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+
+
+                    <Button  Name="dessinerButton"  Click="dessinerButton_Click" Width="25" Height="25">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                    <Image Source="/assets/img/ink.png" 
+                               Width="20" 
+                               Height="20"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+
+
+
+                    <Button  Name="add_line"  Click="add_line_Click" Width="25" Height="25">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                    <Image Source="/assets/img/line.png" 
+                               Width="20" 
+                               Height="20"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+
+
+
+
+
+
+                    <Button  Name="deleteAllButton"  Click="deleteAllButton_Click" Width="25" Height="25">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                    <Image Source="/assets/img/deleteAll.png" 
+                               Width="20" 
+                               Height="20"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+
+                    <Button  Name="deletePreviousButton"  Click="deletePreviousButton_Click" Width="25" Height="25">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                    <Image Source="/assets/img/deletePrevious.png" 
+                               Width="20" 
+                               Height="20"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button  Name="scaleButton"  Click="scaleButton_Click" Width="25" Height="25">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                    <Image Source="/assets/img/scale.png" 
+                               Width="20" 
+                               Height="20"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+
+                    <Button  Name="importButton"  Click="Button_Click" Width="25" Height="25">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                    <Image Source="/assets/img/importBack.png" 
+                               Width="20" 
+                               Height="20"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+
+
+
+                    <Button  Name="pente"  Click="pente_Click" Width="25" Height="25">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                    <Image Source="/assets/img/pente.png" 
+                               Width="20" 
+                               Height="20"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+
+
+
+      
                 </StackPanel>
-                <Button Content="pente" BorderBrush="Black" Background="#FF649FDF" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="82" Click="pente_Click" Foreground="#DD120202" FontSize="18"/>
+                
 
             </Grid>
 
@@ -334,11 +426,11 @@
                 <TextBlock>Topogiraffe</TextBlock>
             </StatusBarItem>
             <StatusBarItem>
-
+                
             </StatusBarItem>
             <Separator/>
             <StatusBarItem>
-
+                <CheckBox Content="Activer Dessin" x:Name="activerDessinCheckBox" Checked="activerDessinCheckBox_Checked" />
             </StatusBarItem>
 
         </StatusBar>

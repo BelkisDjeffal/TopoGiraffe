@@ -348,7 +348,7 @@ namespace TopoGiraffe
             // styling
 
 
-            courbeActuelle = myPolyline;
+            courbeActuelle = myPolyline;// vérifier si le dialogue box est validé
            courbeActuelle.Stroke = new SolidColorBrush(AltitudeToColor(Convert.ToInt32(AltitudeString)));
 
 
