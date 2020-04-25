@@ -4,7 +4,8 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>logo.ico</ApplicationIcon>
+    <ApplicationIcon></ApplicationIcon>
+    <Win32Resource />
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,7 +19,9 @@
     <None Remove="assets\img\house.png" />
     <None Remove="assets\img\import.png" />
     <None Remove="assets\img\ink.png" />
+    <None Remove="assets\img\insertPointIcon.png" />
     <None Remove="assets\img\line.png" />
+    <None Remove="assets\img\logo.ico" />
     <None Remove="assets\img\navigation.png" />
     <None Remove="assets\img\page.png" />
     <None Remove="assets\img\Pente.png" />
@@ -29,6 +32,7 @@
     <None Remove="assets\img\scale2.png" />
     <None Remove="assets\img\splashScreen.png" />
     <None Remove="assets\img\tour.png" />
+    <None Remove="assets\img\triangle.png" />
     <None Remove="assets\img\visibility.png" />
     <None Remove="assets\img\zoom-in.png" />
     <None Remove="draw.png" />
@@ -62,6 +66,8 @@
     <Content Include="assets\img\line.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="assets\img\insertPointIcon.png" />
+    <Resource Include="assets\img\logo.ico" />
     <Resource Include="assets\img\navigation.png" />
     <Resource Include="assets\img\page.png" />
     <Resource Include="assets\img\Pente.png" />
@@ -71,6 +77,7 @@
     <Resource Include="assets\img\scale.png" />
     <Resource Include="assets\img\scale2.png" />
     <Resource Include="assets\img\tour.png" />
+    <Resource Include="assets\img\triangle.png" />
     <Resource Include="assets\img\visibility.png" />
     <Resource Include="assets\img\zoom-in.png" />
   </ItemGroup>

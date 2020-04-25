@@ -42,20 +42,20 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="43"/>
-            <RowDefinition Height="52"/>
+            <RowDefinition Height="69"/>
             <RowDefinition />
             <RowDefinition Height="20" />
 
         </Grid.RowDefinitions>
 
 
-            <!--<Grid>
+        <!--<Grid>
                 <Frame x:Name="_mainFrame"/>
                 <Button x:Name="fichier" VerticalAlignment="Center" Content="Ficher" BorderBrush="Transparent" BorderThickness="0" Width="80" HorizontalAlignment="Left" Click="ShowSauvgardeWindow_Click" >
                     
                 </Button>
             </Grid>-->
-            
+
 
         <Grid>
             <Frame x:Name="_mainFrame"/>
@@ -113,13 +113,13 @@
                 <Button  x:Name="btn14" Width="90" Height="84"  Background="{x:Null}"  BorderBrush="Transparent"
         BorderThickness="0"  Margin="40,0,0,0" Foreground="#FFA37A7A"  >
                     <Image Source="/assets/img/gear.png" Width="30" Height="30"/>
-                </Button> 
+                </Button>
             </StackPanel>
         </Grid>
         <Grid  Grid.Row="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="117" />
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="116" />
+                <ColumnDefinition/>
                 <ColumnDefinition Width="337" />
             </Grid.ColumnDefinitions>
 
@@ -174,7 +174,7 @@
                         </TransformGroup>
                     </TabControl.RenderTransform>
 
-                   
+
 
                     <TabItem Header="Courbe" RenderTransformOrigin="0.505,0.548" Margin="-2,-2,-83,0">
 
@@ -205,7 +205,7 @@
                             <DockPanel Grid.Row="3" VerticalAlignment="Center" Height="195" Margin="0,-44,0,0">
 
                                 <DockPanel DockPanel.Dock="Top" Height="80">
-                                    <Label Margin="10 0" DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="#393939" >Thickness</Label>
+                                    <Label Margin="10 0" DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="#393939" >Epaisseur</Label>
                                     <TextBox Name="ThickText" Text="{Binding ElementName=ThickSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" VerticalAlignment="Bottom" Height="25" Width="80" HorizontalAlignment="Right" Margin="10 0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></TextBox>
                                 </DockPanel>
                                 <Slider IsSnapToTickEnabled="True"  ValueChanged="ThickSlider_ValueChanged" Minimum = "1" Maximum = "15" Value="5" Name="ThickSlider"  ToolTip="largeur" VerticalAlignment="Center" Width="148" Margin="0,0,40,37" Height="25" Foreground="#FF311B92" />
@@ -299,8 +299,7 @@
 
             </Grid>
             <Grid Grid.Column="0" Background="#EEEEEE" Margin="0,0,58,0" >
-                <StackPanel VerticalAlignment="Top"  Margin="10,10,0,0"  Width="30
-                            " HorizontalAlignment="Left">
+                <StackPanel VerticalAlignment="Top"  Margin="0,10,0,0"  Width="38" HorizontalAlignment="Center">
 
                     <StackPanel.Resources>
                         <Style TargetType="{x:Type Button}">
@@ -340,9 +339,35 @@
                     </Button>
 
 
+                    <Button  Name="insertPoint"  Click="drawPoint_Clicked" Width="30" Height="40">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                    <Image Source="/assets/img/triangle.png" 
+                               Width="20" 
+                               Height="20"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
 
 
-                    <Button  Name="add_line"  Click="add_line_Click" Width="25" Height="25">
+                    <!-- 
+                    <Button  Name="insertPoint"  Click="drawPoint_Clicked" Width="29" Height="27">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                    <Image Source="/assets/img/insertPointIcon.png" 
+                               Width="20" 
+                               Height="20"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+-->
+
+
+                    <Button  Name="add_line"  Click="add_line_Click" Width="33" Height="30">
                         <Button.Template>
                             <ControlTemplate>
                                 <Border HorizontalAlignment="Center" VerticalAlignment="Center" >
@@ -413,7 +438,7 @@
 
 
 
-                    <Button  Name="pente"  Click="pente_Click" Width="25" Height="25">
+                    <Button  Name="pente"  Click="Pente_Click" Width="25" Height="25">
                         <Button.Template>
                             <ControlTemplate>
                                 <Border HorizontalAlignment="Center" VerticalAlignment="Center" >
@@ -428,9 +453,9 @@
 
 
 
-      
+
                 </StackPanel>
-                
+
 
             </Grid>
 
@@ -444,7 +469,7 @@
                 <TextBlock>Topogiraffe</TextBlock>
             </StatusBarItem>
             <StatusBarItem>
-                
+
             </StatusBarItem>
             <Separator/>
             <StatusBarItem>
