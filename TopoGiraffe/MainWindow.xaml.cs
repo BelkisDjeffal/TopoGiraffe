@@ -542,13 +542,16 @@ namespace TopoGiraffe
                     }
                     if (inter == false)
                     {
+
                         courbeActuelle.Points.Add(lastPoint);
                         Ellipse circle = new Ellipse();
                         ArtPoint artPoint = new ArtPoint(circle, lastPoint);
                         PointsGlobal[indexPoints].Add(artPoint);
+
                         circle.Width = 10;
                         circle.Height = 10;
                         circle.Fill = Brushes.Purple;
+
                         circle.MouseMove += new System.Windows.Input.MouseEventHandler(Cercle_Mousemove);
                         circle.MouseLeftButtonUp += new System.Windows.Input.MouseButtonEventHandler(Ellipse_MouseLeftButtonUp);
                         circle.MouseLeftButtonDown += new System.Windows.Input.MouseButtonEventHandler(Ellipse_MouseLeftButtonDown);
