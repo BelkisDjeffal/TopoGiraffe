@@ -6,8 +6,15 @@
     <UseWPF>true</UseWPF>
     <ApplicationIcon></ApplicationIcon>
     <Win32Resource />
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+
+
+
   </PropertyGroup>
 
+
+
+	
   <ItemGroup>
     <None Remove="assets\img\deleteAll.png" />
     <None Remove="assets\img\deletePrevious.png" />
@@ -111,5 +118,7 @@
   <ItemGroup>
     <SplashScreen Include="assets\img\SplashScreen2.png" />
   </ItemGroup>
+
+ 
 
 </Project>

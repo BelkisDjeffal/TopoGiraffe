@@ -440,7 +440,7 @@
 
 
 
-                    <Button  Name="pente"  Click="Pente_Click" Width="25" Height="25">
+                    <Button  Name="penteBtn"  Click="Pente_Click" Width="25" Height="25">
                         <Button.Template>
                             <ControlTemplate>
                                 <Border HorizontalAlignment="Center" VerticalAlignment="Center" >

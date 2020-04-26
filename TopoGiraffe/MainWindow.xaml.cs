@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TopoGiraffe.Noyau;
 using TopoGiraffe.BoitesDialogue;
+using System.Windows.Controls.Primitives;
 
 
 //using TopoGiraffe.MessageBoxStyle;
@@ -1683,19 +1684,15 @@ namespace TopoGiraffe
             popup_uc.IsOpen = false;
         }
 
-        private void Zoom_MouseEnter(object sender, MouseEventArgs e)
-        {
-            popup_uc.PlacementTarget = btn1;
-            popup_uc.Placement = PlacementMode.Right;
-            popup_uc.IsOpen = true;
-            Header.PopupText.Text = "Zoom";
-        }
+       
+      
 
-        private void Zoom_MouseLeave(object sender, MouseEventArgs e)
-        {
-            popup_uc.Visibility = Visibility.Collapsed;
-            popup_uc.IsOpen = false;
-        }
+
+
+
+
+
+
 
         private void display_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -1934,6 +1931,7 @@ namespace TopoGiraffe
         }
         List<IntersectionDetail> PenteIntersectionPoints = new List<IntersectionDetail>();
         double pente;
+        
         private void Pente_Click(object sender, RoutedEventArgs e)
         {
             Echelle echel = new Echelle(200, 200);
