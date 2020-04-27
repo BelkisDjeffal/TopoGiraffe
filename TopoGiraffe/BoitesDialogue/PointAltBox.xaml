@@ -51,7 +51,7 @@
         <Label Content="Type de Point :" Grid.Row="1" Margin="19,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Height="26" Width="114" Grid.ColumnSpan="2"/>
 
 
-        <ComboBox x:Name="TypePointCmb" SelectedValuePath="Content" SelectedItem="{Binding myComboBoxSelectedItem, UpdateSourceTrigger=PropertyChanged}"  Grid.Column="1"  Grid.Row="1" Margin="38,21,33,13">
+        <ComboBox x:Name="typePointCmb" SelectedValuePath="Content" SelectedItem="{Binding myComboBoxSelectedItem, UpdateSourceTrigger=PropertyChanged}"  Grid.Column="1"  Grid.Row="1" Margin="38,21,33,13">
             <ComboBoxItem >Point Côté</ComboBoxItem>
             <ComboBoxItem >Point Sommet</ComboBoxItem>
         </ComboBox>

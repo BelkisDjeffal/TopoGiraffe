@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using TopoGiraffe.Noyau;
 using TopoGiraffe.BoitesDialogue;
 using System.Windows.Controls.Primitives;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 
 //using TopoGiraffe.MessageBoxStyle;
@@ -61,6 +62,8 @@ namespace TopoGiraffe
         Boolean drawingScale = false;
         Echelle mainScale;
 
+        List<PointAltitude> pointsAltitudes = new List<PointAltitude>();
+
 
         public MainWindow()
         {
@@ -80,35 +83,7 @@ namespace TopoGiraffe
             //IntersectionDetail intd = new IntersectionDetail(pt, true);
             //this.Serializee(intd);
 
-
-
-
-
-
-
-            // this here is for the colors
-
-            var values = typeof(Brushes).GetProperties().
-                Select(p => new { Name = p.Name, Brush = p.GetValue(null) as Brush }).
-                ToArray();
-            var brushNames = values.Select(v => v.Name);
-
-
-
-            List<RectangleName> rectangleNames = new List<RectangleName>();
-
-            foreach (string brushName in brushNames)
-            {
-
-                RectangleName rn = new RectangleName { Rect = new Rectangle { Fill = new BrushConverter().ConvertFromString(brushName) as Brush }, Name = brushName };
-                rectangleNames.Add(rn);
-            }
-
-
-
-            //colorComboBox.ItemsSource = rectangleNames;
-            //colorComboBox.SelectedIndex = 7;
-            // colors end here
+         
 
             styleCourbeCmb.SelectedIndex = 0;
 
@@ -661,9 +636,20 @@ namespace TopoGiraffe
             {
 
                 drawPointsClicked = false;
-                PointAltitude pointAltitude = new PointAltitude(new Point(x, y), 100);
-                // pointAltitude.DrawPointCote(mainCanvas);
-                pointAltitude.makeTriangle(mainCanvas);
+                
+                
+                if (pointAltitudeActuel != null)
+                {
+                    pointAltitudeActuel.point = new Point(x, y);
+                    pointAltitudeActuel.DrawShape(mainCanvas);// momentané
+                }
+
+                // dialog box to make a new point 
+                
+                
+
+
+
             }
 
 
@@ -1471,6 +1457,60 @@ namespace TopoGiraffe
         }
 
 
+        PointAltitude pointAltitudeActuel = null;
+
+
+        public void MakeNewPoint()
+            // this method creates a point and assigns it to PointAltitudeActuel
+        {
+            PointAltBox pointAltBox = new PointAltBox();
+            pointAltBox.ShowDialog();
+
+
+            if (pointAltBox.DialogResult == true)
+            {
+                if (int.TryParse(pointAltBox.Altitude.Text, out int result))
+
+                {
+                    pointAltitudeActuel = new PointAltitude(result, pointAltBox.typePointCmb.SelectedIndex);
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Altitude Fausse !");
+                }
+
+            }
+
+          
+        }
+
+        Boolean drawPointsClicked = false;
+
+
+
+        private void drawPoint_Clicked(object sender, RoutedEventArgs e)
+        // this method is when the trianngle button is clicked, it puts all other options to false, except the one for drawing the point
+        {
+
+
+            drawPointsClicked = true;
+            addLineClicked = false;
+            btn2Clicked = false;
+            drawingScale = false;
+
+            MakeNewPoint();
+
+
+        }
+
+
+
+
+
+
+
+
         Polyline scalePolyline;
 
 
@@ -1794,19 +1834,7 @@ namespace TopoGiraffe
         }
 
 
-        Boolean drawPointsClicked = false;
-
-
-        private void drawPoint_Clicked(object sender, RoutedEventArgs e)
-        {
-            drawPointsClicked = true;
-            addLineClicked = false;
-            btn2Clicked = false;
-            drawingScale = false;
-
-
-        }
-
+      
 
 
 

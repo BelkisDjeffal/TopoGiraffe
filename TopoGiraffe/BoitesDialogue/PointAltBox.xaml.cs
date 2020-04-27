@@ -23,6 +23,7 @@ namespace TopoGiraffe.BoitesDialogue
         public PointAltBox()
         {
             InitializeComponent();
+            typePointCmb.SelectedIndex = 0;
 
         }
 
@@ -30,7 +31,6 @@ namespace TopoGiraffe.BoitesDialogue
         //buttons behaviour
         void OkButton_Click(object sender, RoutedEventArgs e)
         {
-
             DialogResult = true;
         }
 
@@ -58,6 +58,12 @@ namespace TopoGiraffe.BoitesDialogue
             alti = Altitude.Text;
         }
         //number textbox control
+
+        
+
+
+
+
 
     }
 
