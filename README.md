@@ -10,9 +10,9 @@
 
 ## Preview
 ### Light Mode 
-![](Screenshots/TopoLight.JPG)
+![](Screenshots/TopoLight.png)
 ### Dark Mode
-![](Screenshots/TopoDark.JPG)
+![](Screenshots/TopoDark.Png)
 
 
 ## Authors
