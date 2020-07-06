@@ -12,7 +12,7 @@
 ### Light Mode 
 ![](Screenshots/TopoLight.png)
 ### Dark Mode
-![](Screenshots/TopoDark.Png)
+![](Screenshots/TopoDark.png)
 
 
 ## Authors
